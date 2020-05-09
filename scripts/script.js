@@ -72,7 +72,8 @@ function filterByLocal(value, data = propertiesList) {
     return filteredList;
 }
 
-function filterByPrice(value = 99999, data = propertiesList) {
+function filterByPrice(value, data = propertiesList) {
+    if(!value) value = 99999; 
     const filteredList = data.filter(c => c.price <= value);
     loadProperties(filteredList);
     return filteredList;
@@ -90,7 +91,6 @@ function filterAll() {
     let price = document.getElementById('price').value;
     let type = document.getElementById('type').value;
 
-    if(!price) price = 99999;    
 
     filteredList = filterByLocal(local);
     filteredList = filterByPrice(price, filteredList);
