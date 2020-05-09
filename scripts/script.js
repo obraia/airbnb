@@ -84,13 +84,15 @@ function filterByType(value, data = propertiesList) {
 
 function filterAll() {
     let filteredList;
-    const localInput = document.getElementById('local');
-    const priceInput = document.getElementById('price');
-    const typeInput = document.getElementById('type');
+    let local = document.getElementById('local').value;
+    let price = document.getElementById('price').value;
+    let type = document.getElementById('type').value;
 
-    filteredList = filterByLocal(localInput.value);
-    filteredList = filterByPrice(priceInput.value, filteredList);
-    filteredList = filterByType(typeInput.value, filteredList);
+    if(!price) price = 99999;    
+
+    filteredList = filterByLocal(local);
+    filteredList = filterByPrice(price, filteredList);
+    filteredList = filterByType(type, filteredList);
 
     loadProperties(filteredList);
 }
