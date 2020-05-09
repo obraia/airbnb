@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/home.css">
+
+    <script src="https://kit.fontawesome.com/7f6f4d111e.js" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+
+    <title>Quartos - Airbnb</title>
+</head>
+
+<body onload="getProperties()">
+    <header class="header">
+        <a href="#"><img class="header__logo" src="./img/logo.png" alt="" width="120px"></a>
+        <div class="header__input-group">
+            <input 
+                class="header__input header__input--first" 
+                onchange="filterByLocal(this.value)"
+                type="text" 
+                id="local" 
+                placeholder="local">
+            <input 
+                class="header__input" 
+                onchange="filterByPrice(this.value)"
+                type="number" 
+                id="price" 
+                placeholder="preço até">
+            <input 
+                class="header__input" 
+                onchange="filterByType(this.value)"
+                type="text" 
+                id="type" 
+                placeholder="tipo">
+            <button class="header__button" onclick="filterAll()">
+             <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="principal">
+            <ul class="principal__properties" id="properties-list">
+                <!--  List item structure
+                <li class="principal__properties__item">
+                    <img class="principal__properties__item__image"
+                        src="https://a0.muscache.com/im/pictures/4a5326cb-95e4-4220-a4d8-c91f50cf784c.jpg?aki_policy=medium">
+                    <div class="principal__properties__item__body">
+                        <span class="principal__properties__item__body__price">R$ 368.00</span>
+                        <span class="principal__properties__item__body__type">Apartamento</span>
+                        <button onclick="loadProperties()" class="principal__properties__item__body__button">
+                            Ver detalhes
+                        </button>
+                    </div>
+                </li>
+                -->
+            </ul>
+        </section>
+
+        <aside class="map-container" id="map-container">
+            <h1 class="map-container__title">Localização aproximada</h1>
+            <img class="map-container__map" id="static-map" src="./img/staticmap.png">
+            <h3 class="map-container__local" id="local-name"></h3>
+        </aside>
+    </div>
+
+
+    <footer class="footer">
+        Criado por <a href="https://github.com/obraia">Bryan Diniz</a> para HiringCoders
+    </footer>
+
+</body>
+
+</html>

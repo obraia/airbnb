@@ -1,0 +1,109 @@
+.container{
+    display: flex;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+.principal{
+    flex-shrink: 1;
+    width: 100%;
+    display: flex;
+}
+
+.principal__properties{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.principal__properties__item{
+    width: 270px;
+    height: fit-content;
+    margin: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    box-shadow: 0px 0px 3px 3px #00000008;
+}
+
+.principal__properties__item__image{
+    width: 100%;
+}
+
+.principal__properties__item__body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+}
+
+.principal__properties__item__body__price{
+    font-size: 32px;
+    color: var(--main-color);
+}
+
+.principal__properties__item__body__button{
+    transition: background-color .2s;
+    margin-top: 15px;
+    padding: 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.principal__properties__item__body__button:hover{
+    transition: background-color .2s;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.map-container{
+    flex-shrink: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--secondary-color);
+}
+
+.map-container__title{
+    margin-top: 0;
+    font-weight: lighter;
+    color: var(--main-color);
+}
+
+.map-container__map{
+    border: 2px solid var(--main-color);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 1px #00000015;
+}
+
+.map-container__local{
+    margin-top: 15px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+@media (max-width: 1120px) {
+    .map-container__title{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 650px) {
+    .container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 485px) {
+    .container{
+        padding-top: 100px;
+    }    
+}
