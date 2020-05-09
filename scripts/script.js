@@ -62,6 +62,8 @@ function loadDetails(propertyName) {
     document.getElementById('local-name').textContent = propertyName;
 
     map.src = `https://maps.googleapis.com/maps/api/staticmap?center=${propertyName}&zoom=14&size=300x400&key=AIzaSyDCqP6uMY4xsezEfC8ujDz8dMBKRBsljQ0`
+
+    window.scrollTo(0, 0);
 }
 
 function filterByLocal(value, data = propertiesList) {
