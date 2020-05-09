@@ -18,26 +18,13 @@
     <header class="header">
         <a href="#"><img class="header__logo" src="./img/logo.png" alt="" width="120px"></a>
         <div class="header__input-group">
-            <input 
-                class="header__input header__input--first" 
-                onchange="filterByLocal(this.value)"
-                type="text" 
-                id="local" 
-                placeholder="local">
-            <input 
-                class="header__input" 
-                onchange="filterByPrice(this.value)"
-                type="number" 
-                id="price" 
+            <input class="header__input header__input--first" onchange="filterByLocal(this.value)" type="text"
+                id="local" placeholder="local">
+            <input class="header__input" onchange="filterByPrice(this.value)" type="number" id="price"
                 placeholder="preço até">
-            <input 
-                class="header__input" 
-                onchange="filterByType(this.value)"
-                type="text" 
-                id="type" 
-                placeholder="tipo">
+            <input class="header__input" onchange="filterByType(this.value)" type="text" id="type" placeholder="tipo">
             <button class="header__button" onclick="filterAll()">
-             <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i>
             </button>
         </div>
     </header>
@@ -70,7 +57,9 @@
 
 
     <footer class="footer">
-        Criado por <a href="https://github.com/obraia">Bryan Diniz</a> para HiringCoders
+        Criado por Bryan Diniz para HiringCoders
+        <a href="https://github.com/obraia"><i class="fab fa-github fa-lg"></i></a>
+        <a href="https://github.com/obraia"><i class="fab fa-linkedin fa-lg"></i></a>
     </footer>
 
 </body>
