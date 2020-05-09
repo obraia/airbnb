@@ -1,4 +1,5 @@
 let propertiesList;
+let selectedPrice = 0;
 
 function getProperties() {
     fetch('https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72', { method: 'get' })
@@ -45,7 +46,7 @@ function loadProperties(data) {
         itemPriceCopy.textContent = `R$ ${property.price.toFixed(2)}`;
         itemTypeCopy.textContent = property.property_type;
         itemButtonCopy.innerHTML = 'Ver detalhes';
-        itemButtonCopy.addEventListener('click', () => loadDetails(property.name));
+        itemButtonCopy.addEventListener('click', () => loadDetails(property.name, property.price));
 
         listItemCopy.appendChild(itemImageCopy);
         itemBodyCopy.appendChild(itemPriceCopy);
@@ -57,9 +58,10 @@ function loadProperties(data) {
     });
 }
 
-function loadDetails(propertyName) {
+function loadDetails(propertyName, price) {
     const map = document.getElementById('static-map');
     document.getElementById('local-name').textContent = propertyName;
+    selectedPrice = price;
 
     map.src = `https://maps.googleapis.com/maps/api/staticmap?center=${propertyName}&zoom=14&size=300x400&key=AIzaSyDCqP6uMY4xsezEfC8ujDz8dMBKRBsljQ0`
 
@@ -73,7 +75,7 @@ function filterByLocal(value, data = propertiesList) {
 }
 
 function filterByPrice(value, data = propertiesList) {
-    if(!value) value = 99999; 
+    if (!value) value = 99999;
     const filteredList = data.filter(c => c.price <= value);
     loadProperties(filteredList);
     return filteredList;
@@ -97,4 +99,9 @@ function filterAll() {
     filteredList = filterByType(type, filteredList);
 
     loadProperties(filteredList);
+}
+
+function calculateTotalPrice(days) {
+    let totalValue = document.getElementById('total-value');
+    totalValue.innerHTML = `Valor total: R$ ${(selectedPrice * days).toFixed(2)}`
 }

@@ -90,6 +90,22 @@
     color: var(--text-color);
 }
 
+.map-container__input{
+    height: 40px;
+    margin-top: 15px;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    text-indent: 10px;
+    font-size: 18px;
+    outline: none;
+}
+
+.map-container__estadia{
+    margin-top: 15px;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
 @media (max-width: 1120px) {
     .map-container__title{
         font-size: 26px;

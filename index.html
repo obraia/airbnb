@@ -54,6 +54,11 @@
             <h1 class="map-container__title">Localização aproximada</h1>
             <img class="map-container__map" id="static-map" src="./img/staticmap.png">
             <h3 class="map-container__local" id="local-name"></h3>
+            <div id="">
+                <input class="map-container__input" onchange="calculateTotalPrice(this.value)" type="number"
+                    placeholder="Quantidade de dias">
+                <h3 class="map-container__estadia" id="total-value">Valor total: R$ 0.00</h3>
+            </div>
         </aside>
     </div>
 
